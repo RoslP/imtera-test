@@ -42,7 +42,7 @@ const saveLink = async () => {
         </div>
         <div class="mt-[9px]">
             <input placeholder="https://yandex.ru/maps/org/samoye_populyarnoye_kafe/1010501395/reviews/"
-            class="text-xs w-[480px] px-[14px] py-[4px] text-gray-700 bg-white border border-gray-300 rounded-md underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 text-[#788397]"
+            class="text-xs w-[480px] px-[14px] py-[4px] text-gray-700 bg-white border border-gray-300 rounded-md underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 text-[#788397] decoration-gray-400"
             v-model="yandexLink"
             >
         </div>

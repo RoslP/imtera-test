@@ -15,7 +15,7 @@ class ReviewsController extends Controller
             'link' => ['required', 'url', 'regex:/^https:\/\/yandex\.ru\//i'],
         ]);
 
-        UserLink::query()->updateOrCreate(['user_id' => auth()->id(), 'link' => $validated['link']]);
+        UserLink::query()->updateOrCreate(['user_id' => auth()->id()], ['link' => $validated['link']]);
 
         return response(status: 200);
     }
