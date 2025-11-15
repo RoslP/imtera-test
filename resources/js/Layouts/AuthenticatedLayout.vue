@@ -1,10 +1,13 @@
 <script setup>
 import DropdownLink from '@/Components/DropdownLink.vue';
-import Form from  '@/Pages/Profile/Reviews/ReviewsForm.vue'
-import ReviewsForm from "@/Pages/Profile/Reviews/ReviewsForm.vue";
+import ReviewsForm from '@/Pages/Profile/Reviews/ReviewsForm.vue'
+import ProfileMainContent from "@/Pages/Profile/ProfileMainContent.vue";
+import {ref} from "vue";
+
 const props = defineProps({
     login: String
 });
+const active = ref("reviews");
 </script>
 
 <template>
@@ -21,7 +24,7 @@ const props = defineProps({
                         Аккаунт: {{props.login}}
                     </div>
                     <div class="sidebar_sections">
-                        <ReviewsForm></ReviewsForm>
+                        <ReviewsForm :active="active" @change-active="active = $event" />
                     </div>
                 </div>
                 <div class="main_content_section">
@@ -35,6 +38,9 @@ const props = defineProps({
                                 <img class="logo_logout" src="../../svg/exit.svg" alt="exit">
                             </DropdownLink>
                         </div>
+                    </div>
+                    <div>
+                        <ProfileMainContent :active="active"></ProfileMainContent>
                     </div>
                 </div>
             </div>
