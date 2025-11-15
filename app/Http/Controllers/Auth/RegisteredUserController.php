@@ -32,12 +32,18 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+            'login' => 'required|string|min:5|max:255|unique:' . User::class,
+            'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        ], [
+                'login.min' => 'Логин должен быть не менее :min символов',
+                'login.required' => 'Поле Логин обязательно',
+                'login.unique' => 'Этот логин уже используется',
+            ]);
 
         $user = User::create([
             'name' => $request->name,
+            'login' => $request->login,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
