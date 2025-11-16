@@ -11,35 +11,46 @@
 
     docker exec -it app-imtera bash
 
-Далее 
+Далее
 
     composer install
 
-Далее 
+Далее
 
     php artisan migrate
 
-### Далее тут важно
-перед установкой npm скопируйте содержимое vite.config.js
-и после установки замените.
-
-    npm install
-
 Далее 
 
-    npm run build или npm run dev
+    npm install --legacy-peer-deps
+
+Далее
+
+    npm run dev
 
 Сайт доступен по
 
     http://localhost:8876/
 
+Если ошибки с доступом (Failed to open stream: Permission denied) то
+
+sudo chmod -R 777 папка_проекта
 
 
 
 
 
+## Суть работы:
 
+Задача
+- Создать страницу интеграции с Яндекс Картами
 
+Функции
+- Авторизация логин/пароль
+- Страница настроек, вставка ссылки на Яндекс
+- Вывод последних 5-10 отзывов из карточки.
+- Вывод рейтинга компании и общего количества отзывов
+
+Прототип: https://www.figma.com/design/qcypzqFKHdqd97U47pZ2Xf/%D0%A2%D0%97-10.11.25?node-id=0-1&t=93yRzOzxmqJVo5ff-1
 
 
 
