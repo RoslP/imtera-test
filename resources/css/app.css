@@ -24,7 +24,8 @@
 }
 .sidebar_section{
     background-color: #F6F8FA;
-    height: 2000px;
+    min-height: 2000px;
+    height: auto;
 }
 .head_main_content{
     display: flex;
@@ -57,3 +58,9 @@
     grid-template-columns: 2fr 11fr;
     padding-top: 8px;
 }
+.reviews_grid_container{
+    display: grid;
+    grid-template-columns: minmax(200px, 759px) minmax(120px, 263px);
+    column-gap: 21px;
+}
+
