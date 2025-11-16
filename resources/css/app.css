@@ -63,4 +63,7 @@
     grid-template-columns: minmax(200px, 759px) minmax(120px, 263px);
     column-gap: 21px;
 }
-
+.review_author_flex{
+    display: flex;
+    justify-content: space-between;
+}
