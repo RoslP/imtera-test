@@ -1,3 +1,48 @@
+## Запуск
+
+в .env ничего менять не нужно он сразу добавлен и настроен
+
+
+В папке проекта
+
+    docker-compose up -d
+
+Далее
+
+    docker exec -it app-imtera bash
+
+Далее 
+
+    composer install
+
+Далее 
+
+    php artisan migrate
+
+### Далее тут важно
+перед установкой npm скопируйте содержимое vite.config.js
+и после установки замените.
+
+    npm install
+
+Далее 
+
+    npm run build или npm run dev
+
+Сайт доступен по
+
+    http://localhost:8876/
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
