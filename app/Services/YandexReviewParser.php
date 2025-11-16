@@ -30,7 +30,7 @@ class YandexReviewParser
         $crawler->filter('[class*="business-review-view__info"]')->each(function (Crawler $node) use (&$reviews) {
             $reviews[] = [
                 'date'      => $node->filter('[class*="business-review-view__date"]')->text(''),
-                'author'    => $node->filter('[class*="business-review-view__author"]')->text(''),
+                'author'    => $node->filter('a.business-review-view__link span[itemprop="name"]')->text(),
                 'text'      => $node->filter('[class*="spoiler-view__text-container"]')->text(''),
                 'rating'    => $node->filter('div.business-rating-badge-view__stars')->attr('aria-label'),
             ];
